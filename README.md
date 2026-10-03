@@ -33,3 +33,9 @@ Clonar el repositorio y situarse en la raíz del proyecto:
 git clone <URL_DE_TU_REPOSITORIO>
 cd tp-final-etl
 pip install -r requirements.txt
+
+## 3. Fuentes de Datos
+  Los datos crudos provienen de las publicaciones oficiales del Instituto Nacional de Estadisticas y Censos (INDEC) y la Dirección Nacional de Estadísticas del Sector Externo, abarcando las series temporales completas entre 1993 y 2024 para las provincias de Chaco, Corrientes, Formosa y Misiones.
+
+  ## 4. Hallazgos en los datos
+  Al explorar las 1.408 observaciones del dataset, se observa un cambio estructural en los socios comerciales del NEA a lo largo de las décadas: durante la década de 1990 y principios de los 2000, los destinos del Mercosur (principalmente Brasil) lideraban los primeros puestos del ranking provincial. Sin embargo, en la última década (2014-2024), China pasó a consolidarse de forma sostenida como el destino número uno para provincias como Chaco (alcanzando más de 110 MUSD en 2024, con una participación superior al 27% del total provincial), traccionado fuertemente por el rubro de Productos primarios (que explica más del 81% de su canasta exportadora).
