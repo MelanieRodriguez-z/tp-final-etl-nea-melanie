@@ -287,7 +287,22 @@ def agregar_ranking(filas, top_n=None):
     #      sorted(grupo, key=lambda f: f["valor_musd"], reverse=True)
     #   3. Recorré el grupo ordenado con enumerate(..., start=1) y asigná
     #      'ranking_destino' y 'es_top3' (un booleano: posición <= top_n).
-    raise NotImplementedError("TODO 7: implementá agregar_ranking()")
+    grupos = {}
+    for fila in filas:
+        clave = (fila["provincia"], fila["anio"])
+        grupos.setdefault(clave, []).append(fila)
+
+    for grupo in grupos.values():
+        grupo_ordenado = sorted(
+            grupo,
+            key=lambda f: (f["valor_musd"] is not None, f["valor_musd"]),
+            reverse=True,
+        )
+        for puesto, fila in enumerate(grupo_ordenado, start=1):
+            fila["ranking_destino"] = puesto
+            fila["es_top3"] = puesto <= top_n
+
+    return filas
     # ---------------------------------------------------------------------
 
 
