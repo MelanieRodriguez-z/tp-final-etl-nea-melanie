@@ -244,7 +244,7 @@ def escribir_log_corrida(resumen, carpeta=None, nombre=None):
         2026-08-02 14:30 | OK | 1408 filas | 1993-2024
     """
     # TODO 12b ------------------------------------------------------------
-    carpeta = carpeta or config.DIR_PROCESSED
+    carpeta = carpeta or getattr(config, "DIR_LOGS", "logs")
     nombre = nombre or getattr(config, "ARCHIVO_SALIDA_LOG", getattr(config, "ARCHIVO_LOG", "corrida.log"))
     os.makedirs(carpeta, exist_ok=True)
     ruta = os.path.join(carpeta, nombre)
